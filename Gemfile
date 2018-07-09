@@ -39,6 +39,12 @@ gem "jquery-rails"
 
 gem "faker"
 
+gem "bootstrap-will_paginate"
 gem "will_paginate"
 
-gem "bootstrap-will_paginate"
+gem "sidekiq"
+
+gem "bootstrap-kaminari-views"
+gem "kaminari"
+
+gem "figaro"

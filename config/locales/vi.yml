@@ -1,5 +1,6 @@
 vi:
   hello: "Xin chào"
+  hi: "Chào"
   home: "Trang chủ"
   help: "Hỗ trợ"
   contact: "Liên hệ"
@@ -31,3 +32,8 @@ vi:
   you_sure: "Thực hiện thao tác?"
   deleted: "Đã xóa"
   profile_updated: "Đã cập nhật hồ sơ"
+  account_acctivation: "Kích hoạt tài khoản"
+  account_activated: "Đã kích hoạt tài khoản"
+  invalid_activation_link: "Link kích hoạt không đúng"
+  click_link_to_activate account: "Click link bên dưới để kích hoạt tài khoản"
+  account_not_activated: "Tài khoản chưa được kích hoạt. Hãy kiểm tra lại mail"
