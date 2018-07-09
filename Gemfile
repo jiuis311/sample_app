@@ -36,3 +36,9 @@ gem "bcrypt", "3.1.12"
 gem "config"
 
 gem "jquery-rails"
+
+gem "faker"
+
+gem "will_paginate"
+
+gem "bootstrap-will_paginate"

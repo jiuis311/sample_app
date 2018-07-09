@@ -9,3 +9,7 @@ user:
  password:
   min_length: 6
   presence: true
+ paginate:
+  per_page: 20
+ gravatar:
+  size: 50
