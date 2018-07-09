@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  home: "Home"
+  help: "Help"
+  contact: "Contact"
