@@ -48,3 +48,7 @@ gem "bootstrap-kaminari-views"
 gem "kaminari"
 
 gem "figaro"
+
+gem "carrierwave"
+
+gem "mini_magick"
