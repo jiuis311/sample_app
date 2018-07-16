@@ -1,5 +1,6 @@
 en:
   hello: "Hello world"
+  hi: "Hi"
   home: "Home"
   help: "Help"
   contact: "Contact"
@@ -31,3 +32,8 @@ en:
   you_sure: "You sure?"
   deleted: "Deleted"
   profile_updated: "Profile updated"
+  account_activation: "Account activation"
+  account_activated: "Account activated"
+  invalid_activation_link: "Invalid activation link"
+  click_link_to_activate account: "Click on the link below to activate your account"
+  account_not_activated: "Account not activated. Please check your email"
