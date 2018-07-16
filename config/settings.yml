@@ -13,3 +13,5 @@ user:
   per_page: 20
  gravatar:
   size: 50
+ reset_password:
+  expire_time_days: 2
