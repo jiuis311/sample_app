@@ -52,3 +52,8 @@ vi:
   micropost_feed: "Bài đăng"
   view_profile: "Xem hồ sơ"
   post: "Đăng"
+  following: "Đang theo dõi"
+  followers: "Người theo dõi"
+  follow: "Theo dõi"
+  unfollow: "Bỏ theo dõi"
+  micropost: "Bài viết"

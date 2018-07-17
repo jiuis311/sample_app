@@ -52,3 +52,8 @@ en:
   micropost_feed: "Micropost feed"
   view_profile: "View my profile"
   post: "Post"
+  following: "following"
+  followers: "followers"
+  follow: "Follow"
+  unfollow: "Unfollow"
+  micropost: "Micropost"
