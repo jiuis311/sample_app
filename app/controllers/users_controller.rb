@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :find_user, only: [:show, :edit, :update, :destroy, :correct_user]
+  before_action :find_user, only: [:show, :edit, :update,
+                                   :destroy, :correct_user]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: [:destroy]
 
   def index
-    @users = User.select(:name, :email, :id, :admin, :updated_at)
-                 .order(updated_at: :desc).page(params[:page])
-                 .per_page Settings.user.paginate.per_page
+    @users = User.select_user_activated.page(params[:page])
   end
 
   def new
@@ -26,7 +25,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @microposts = @user.microposts.order(updated_at: :desc)
+                       .page(params[:page])
+                       .per_page Settings.user.paginate.per_page
+  end
 
   def edit; end
 
@@ -49,13 +52,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :name, :email,
       :password, :password_confirmation
-  end
-
-  def logged_in_user
-    return if logged_in?
-    flash[:danger] = t("please_log_in")
-    store_location
-    redirect_to login_path
   end
 
   def correct_user
