@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+  get 'comments/destroy'
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
     get "/help", to: "static_pages#help"
@@ -18,5 +20,7 @@ Rails.application.routes.draw do
     resources :password_resets, only: [:new, :create, :edit, :update]
     resources :microposts, only: [:create, :destroy]
     resources :relationships, only: [:create, :destroy]
+    resources :entries
+    resources :comments
   end
 end

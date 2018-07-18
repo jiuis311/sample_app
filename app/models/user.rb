@@ -8,6 +8,7 @@ class User < ApplicationRecord
                                   dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  has_many :entries, dependent: :destroy
 
   attr_reader :remember_token, :activation_token, :reset_token
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -85,13 +86,6 @@ class User < ApplicationRecord
     reset_sent_at < Settings.user.reset_password.expire_time_days.hours.ago
   end
 
-  def feed
-    following_ids = "SELECT followed_id FROM relationships
-                     WHERE  follower_id = :user_id"
-    Micropost.where("user_id IN (#{following_ids})
-                     OR user_id = :user_id", user_id: id)
-  end
-
   def follow other_user
     following << other_user
   end
@@ -102,6 +96,13 @@ class User < ApplicationRecord
 
   def following? other_user
     following.include? other_user
+  end
+
+  def feed
+    following_ids = "SELECT followed_id FROM relationships
+                     WHERE  follower_id = :user_id"
+    Entry.where("user_id IN (#{following_ids})
+                     OR user_id = :user_id", user_id: id)
   end
 
   private

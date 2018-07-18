@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @microposts = @user.microposts.order(updated_at: :desc)
+    @entries = @user.entries.order(updated_at: :desc)
                        .page(params[:page])
                        .per_page Settings.user.paginate.per_page
   end

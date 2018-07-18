@@ -1,0 +1,54 @@
+<% if @entry.user.current_user? current_user %>
+  <%= link_to t("edit"), edit_entry_path(@entry),
+    class: "pull-right btn-sm btn-warning" %>
+<% end %>
+<h1><%= @entry.subject %></h1>
+<%= image_tag @entry.picture.url, class: "center-block" if @entry.picture? %>
+<p><%= @entry.content %></p>
+<span class="timestamp">
+  <%= t("posted") %> <%= time_ago_in_words @entry.created_at %> <%= t("ago") + " " + t("by") %>
+  <%= link_to @entry.user.name, @entry.user %>
+</span>
+<hr>
+<div class="row">
+  <div class="col-md-6">
+    <% if logged_in? %>
+    <h2><%= t("comments") %></h2>
+      <%= form_tag comments_path, method: "post" do %>
+        <div class="field">
+          <%= text_area_tag :content, "", rows: "3" %>
+        </div>
+        <%= hidden_field_tag "entry_id", @entry.id %>
+        <%= submit_tag t("leave_comment"), class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
+    <% @comments.each do |comment| %>
+      <div class="media" id="comment-<%= comment.id %>">
+				<%= link_to gravatar_for(comment.user, size: Settings.user.gravatar.size), comment.user %>
+					<h4><%= link_to @entry.user.name, @entry.user %></h4>
+          <% if comment.user.current_user? current_user %>
+            <div class="dropdown pull-right">
+              <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu" overflow-y="visible">
+                <li>
+                  <%= link_to t("edit"), edit_comment_path(comment), remote: true %>
+                </li>
+                <li>
+                  <%= link_to t("delete"), comment, method: :delete, remote: true, data: {confirm: t("you_sure")} %>
+                </li>
+              </ul>
+            </div>
+          <% end %>
+					<p><%= comment.content %></p>
+          <%= form_tag comment, remote: true, method: "put", id: "comment-form-#{comment.id}", style: "display: none;" do %>
+            <div class="field">
+              <%= text_area_tag :content, "", rows: "2" %>
+            </div>
+            <%= hidden_field_tag "entry_id", @entry.id %>
+            <%= submit_tag t("edit_comment"), class: "btn btn-primary" %>
+          <% end %>
+			</div>
+    <% end %>
+  </div>
+</div>

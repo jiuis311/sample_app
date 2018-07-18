@@ -13,13 +13,30 @@
   </aside>
   <div class="col-md-8">
     <%= render "follow_form" if logged_in? %>
-    <% if @user.microposts.any? %>
-      <h3><%= t("micropost") %> (<%= @user.microposts.count %>)</h3>
+    <% if @user.entries.any? %>
+      <h3><%= "Entries" %> (<%= @user.entries.count %>)</h3>
       <ol class="microposts">
-        <%= render @microposts %>
+        <% @entries.each do |entry| %>
+          <li id="entry-<%= entry.id %>">
+            <h1><%= link_to entry.subject, entry%></h1>
+            <span class="content">
+              <%= entry.content[0..50] %>...
+            </span>
+            <span class="timestamp">
+              Posted <%= time_ago_in_words entry.created_at %> ago
+            </span>
+            <span class="user">By <%= link_to entry.user.name, entry.user %></span>
+            <% if entry.user.current_user? current_user %>
+              <span><%= link_to t("delete"), entry, method: :delete, data: {confirm: t("you_sure")},
+                class: "pull-right btn btn-danger" %></span>
+            <% end %>
+            <br><br>
+          </li>
+        <% end %>
       </ol>
-      <%= paginate @microposts, :theme => "twitter-bootstrap-3",
+      <%= paginate @entries, :theme => "twitter-bootstrap-3",
         :pagination_class => "pagination-sm" %>
     <% end %>
+
   </div>
 </div>
