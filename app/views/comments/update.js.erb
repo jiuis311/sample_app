@@ -1,0 +1,4 @@
+$("#comment-form-<%= @comment.id %>").hide(function() {
+  $("#comment-<%= @comment.id %>").find("p").html("<%= @comment.content %>")
+  $("#comment-<%= @comment.id %>").children("p").slideDown();
+});

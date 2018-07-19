@@ -1,0 +1,113 @@
+vi:
+  hello: "Xin chào"
+  hi: "Chào"
+  home: "Trang chủ"
+  help: "Hỗ trợ"
+  contact: "Liên hệ"
+  about: "Giới thiệu"
+  signup: "Đăng ký"
+  welcome: "Chào mừng tới Sample App"
+  name: "Tên"
+  email: "Email"
+  password: "Mật khẩu"
+  confirmation: "Xác nhận"
+  create_account: "Tạo tài khoản"
+  no_user_warning: "Không có người dùng này"
+  login: "Đăng nhập"
+  login_fail_message: "Email hoặc mật khẩu không đúng"
+  logout: "Đăng xuất"
+  profile: "Thông tin"
+  settings: "Cài đặt"
+  users: "Người dùng"
+  news: "Tin tức"
+  new_user: "Người dùng mới"
+  account: "Tài khoản"
+  remember_me: "Nhớ tài khoản"
+  save: "Lưu"
+  edit_user: "Cập nhật thông tin"
+  change: "Thay đổi"
+  please_log_in: "Hãy đăng nhập"
+  all_user: "Người dùng"
+  delete: "Xóa"
+  you_sure: "Thực hiện thao tác?"
+  deleted: "Đã xóa"
+  profile_updated: "Đã cập nhật hồ sơ"
+  account_acctivation: "Kích hoạt tài khoản"
+  account_activated: "Đã kích hoạt tài khoản"
+  invalid_activation_link: "Link kích hoạt không đúng"
+  click_link_to_activate account: "Click link bên dưới để kích hoạt tài khoản"
+  account_not_activated: "Tài khoản chưa được kích hoạt. Hãy kiểm tra lại mail"
+  forgot_password: "Quên mật khẩu"
+  password_reset_mail_sent: "Đã gửi mail reset password"
+  email_not_found: "Không tìm thấy email"
+  cannot_empty: "Không thể để trống"
+  password_reset: "Mật khẩu đã được sửa"
+  password_expired: "Reset password hết hạn"
+  reset_password: "Cài đặt lại mật khẩu"
+  micropost_created: "Đã tạo micropost"
+  micropost_deleted: "Đã xóa micropost"
+  img_limit_mess: "phải nhỏ hơn 5MB"
+  welcome: "Chào mừng tới Sample App"
+  delete_failed: "Xóa không thành công"
+  micropost_feed: "Bài đăng"
+  view_profile: "Xem hồ sơ"
+  post: "Đăng"
+  following: "Đang theo dõi"
+  followers: "Người theo dõi"
+  follow: "Theo dõi"
+  unfollow: "Bỏ theo dõi"
+  entry: "Bài viết"
+  edit: "Chỉnh sửa"
+  new_entry: "Bài viết mới"
+  my_blog: "Blog của tôi"
+  sub_title: "Tổng hợp các bài viết hay"
+  entries: "Các bài viết"
+  posted: "Đăng"
+  by: "bởi"
+  ago: "trước"
+  edit: "Chỉnh sửa"
+  edit_comment: "Sửa bình luận"
+  leave_comment: "Thêm bình luận"
+  comments: "Bình luận"
+  activate_email_sent: "Email kích hoạt đã được gửi"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: khoảng 1 giờ
+        other: khoảng %{count} giờ
+      about_x_months:
+        one: khoảng 1 tháng
+        other: khoảng %{count} tháng
+      about_x_years:
+        one: khoảng 1 năm
+        other: khoảng %{count} trước
+      almost_x_years:
+        one: gần 1 năm
+        other: gần %{count} năm
+      half_a_minute: nửa phút
+      less_than_x_minutes:
+        zero: 0 phút
+        one: gần 1 phút
+        other: gần %{count} trước
+      less_than_x_seconds:
+        zero: 0 giây
+        one: gần 1 giây
+        other: gần %{count} giây
+      over_x_years:
+        one: hơn 1 năm
+        other: hơn %{count} năm
+      x_days:
+        one: 1 ngày
+        other: "%{count} ngày"
+      x_minutes:
+        one: 1 phút
+        other: "%{count} phút"
+      x_months:
+        one: 1 tháng
+        other: "%{count} tháng"
+      x_years:
+        one: 1 năm
+        other: "%{count} năm"
+      x_seconds:
+        one: 1 giây
+        other: "%{count} giây"

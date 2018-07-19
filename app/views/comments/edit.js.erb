@@ -1,0 +1,4 @@
+$("#comment-<%= @comment.id %>").children("p").hide(function() {
+    $("#comment-form-<%= @comment.id %>").find("textarea").val("<%= @comment.content %>")
+    $("#comment-form-<%= @comment.id %>").show();
+});
